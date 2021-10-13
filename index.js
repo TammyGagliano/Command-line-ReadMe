@@ -53,48 +53,16 @@ const questions = () => {
         message: 'What does the user need to know about contributing to the repo?',
         name: 'repo',
       },
-  ])
-}
-.then({
-    description, 
-    tableOfContents,
-    installation, 
-    usage, 
-    license, 
-    contributing,
-    tests, 
-    questions
-})=> {
+  ]);
+};
 
-    //template to be used 
-    const template = # ${title}
+    then((data) => {
 
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [contribution](#contribution)
-    * [Credits](#credits)
-    * [License](#license)
-    # Installation
-    ${installation}
-    # Usage
-    ${usage}
-    ## Contribution
-    ${contribution}
-    ### Instructions
-    ${instructions}
-    ## Credits
-    ${credit}
-    ## License
-    ${license}
     
-    # Contact :${}
-    * Github :${}
-    * LinkedIn :${}
-    * Email :${};
-
+   
     // Function to create our ReadME file.
     createNewFile(title, template);
-});
+
     
 
 // TODO: Create a function to write README file
