@@ -35,13 +35,13 @@ const questions = () => {
         type: 'input',
         message: 'What kind of command should be run to install dependencies',
         name: 'dependencies',
-        //pre-generated answer: ['npm i'],
+        default: 'npm i',
       },
       {
         type: 'input',
         message: 'What command should be run to run tests?',
         name: 'tests',
-        //pre-generated answer: ['npm test'],
+        default: 'npm test',
       },
       {
         type: 'input',
@@ -56,13 +56,11 @@ const questions = () => {
   ]);
 };
 
-    then((data) => {
+//console.log(questions);
 
-    
+    //then((data) => {
+
    
-    // Function to create our ReadME file.
-    createNewFile(title, template);
-
     
 
 // TODO: Create a function to write README file
@@ -74,8 +72,8 @@ function createNewFile (fileName, data) {
         console.log(err);
     } else {
         console.log('Your README File has been generated!');
-    })
-}
+    }
+});
 
 
 // TODO: Create a function to initialize app
