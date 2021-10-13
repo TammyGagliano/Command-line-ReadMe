@@ -18,7 +18,7 @@ function generateMarkdown(data) {
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Guidelines](#guidelines)
+  * [Contributions](#contributions)
   * [Testing](#testing)
   * [License](#license)
   * [Questions](#questions)
@@ -29,12 +29,13 @@ function generateMarkdown(data) {
   ${data.installation}
   # Usage
   ${data.usage}
-  ## Guidelines
-  ${data.guidelines}
+  ## Contributions
+  ${data.contributions}
   ## Testing
   ${data.testing}
   ## License
   This project is covered under the ${data.license} license.
+  [![license](https://img.shields.io/badge/license-${data.license}-blue)](https://shields.io)
   ## Questions
   ${data.questions}
   
