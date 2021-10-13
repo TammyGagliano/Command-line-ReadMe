@@ -3,10 +3,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-const questions = [];
-
-inquirer
-  .prompt([
+const questions = () => {
+    return inquirer.prompt([
     {
         type: 'input',
         message: 'What is your GitHub username?',
@@ -56,10 +54,61 @@ inquirer
         name: 'repo',
       },
   ])
+}
+.then({
+    description, 
+    tableOfContents,
+    installation, 
+    usage, 
+    license, 
+    contributing,
+    tests, 
+    questions
+})=> {
 
+    //template to be used 
+    const template = # ${title}
+
+    * [Installation](#installation)
+    * [Usage](#usage)
+    * [contribution](#contribution)
+    * [Credits](#credits)
+    * [License](#license)
+    # Installation
+    ${installation}
+    # Usage
+    ${usage}
+    ## Contribution
+    ${contribution}
+    ### Instructions
+    ${instructions}
+    ## Credits
+    ${credit}
+    ## License
+    ${license}
+    
+    # Contact :${}
+    * Github :${}
+    * LinkedIn :${}
+    * Email :${};
+
+    // Function to create our ReadME file.
+    createNewFile(title, template);
+});
+    
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function createNewFile (fileName, data) {
+    fs.writeFile(`./${fileName.toLowerCase().split(' ').join('')}.md`,data,(err)=>{
+    
+        // then we will write a call back function 
+    if (err) {
+        console.log(err);
+    } else {
+        console.log('Your README File has been generated!');
+    })
+}
+
 
 // TODO: Create a function to initialize app
 function init() {}
@@ -68,45 +117,4 @@ function init() {}
 init();
 
 
-
-
-
-
-inquirer
-  .prompt([
-    {
-      type: 'input',
-      message: 'What is your name?',
-      name: 'name',
-    },
-    {
-      type: 'list',
-      message: 'What languages do you know?',
-      name: 'languages',
-      choices: ['HTML', 'CSS', 'Javascript'],
-    },
-    {
-      type: 'list',
-      message: 'What is your preferred method of communication?',
-      name: 'contact',
-      choices: ['email', 'phone', 'chat'],
-    },
-  ])
-
-  //the parameter will store the answers that the user supplies
-  .then((response) => {
-     // console.log(response)
-
-  // Now we need to translate this information and store it in a file
-  // Also, the data that is stored in here will need to be converted from a JSON object to a string
-    fs.writeFile('response.txt', JSON.stringify(response), (err) => {
-
-    // then we will write a call back function 
-    if (err) {
-        console.log(err);
-    } else {
-        console.log('It worked!');
-    }      
-});
-});
 
