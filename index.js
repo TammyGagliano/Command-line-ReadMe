@@ -69,7 +69,7 @@ const questions = () => {
  
 // TODO: Create a function to write README file
 function createNewFile (fileName, data) {
-    return fs.writeFile(fileName, data, (err) => {
+    fs.writeFileSync(fileName, data, (err) => {
     
         // then we will write a call back function 
     if (err) {
