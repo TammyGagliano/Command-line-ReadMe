@@ -85,9 +85,9 @@ function init() {
     inquirer.prompt(questions)
     .then(function (userInput) {
         console.log(userInput)
-        writetoFile('README.md', generateMarkdown({...userInput}));
+        writeToFile('README.md', generateMarkdown({userInput}));
     })
 }
 
 // Function call to initialize app
-init();
+init()};
