@@ -87,7 +87,8 @@ function init() {
         console.log(userInput)
         writetoFile('ReadMe.md', generateMarkdown(userInput));
     });
+
 };
 
 // Function call to initialize app
-init();
+init(); 
