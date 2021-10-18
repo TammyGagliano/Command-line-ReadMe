@@ -4,8 +4,7 @@ const fs = require('fs');
 const generateMarkdown = require('./generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const questions = () => {
-    return inquirer.prompt([
+const questions = [
         //Github username
     {
         type: 'input',
@@ -63,8 +62,7 @@ const questions = () => {
         message: 'What does the user need to know about contributing to the repo?',
         name: 'repo',
     },
-]);
-};
+];
 
  
 // TODO: Create a function to write README file
@@ -78,16 +76,14 @@ function createNewFile (fileName, data) {
         console.log('Your README File has been generated!');
     }
 })
-
-
+};
+// Function call to initialize app
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
-    .then(function (userInput) {
-        console.log(userInput)
-        writeToFile('README.md', generateMarkdown({userInput}));
-    })
+    .then((answers) => {
+        createNewFile('README.md' , answers)
+      })
 }
 
-// Function call to initialize app
-init()};
+init();
